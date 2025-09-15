@@ -16,7 +16,6 @@ public class UsuariaService {
         var usuaria = Usuaria.builder()
                 .nome(record.nome())
                 .email(record.email())
-                .dataNascimento(record.dataNascimento())
                 .telefone(record.telefone())
                 .build();
 
