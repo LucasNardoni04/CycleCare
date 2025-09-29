@@ -27,6 +27,6 @@ public class CalendarioCiclo {
     private List<Ciclo> diasDoCiclo;
 
     @ManyToOne
-    @JoinColumn(name = "usuaria_id", nullable = false)
-    private Usuaria usuaria;
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 }

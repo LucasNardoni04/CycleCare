@@ -5,7 +5,7 @@ import br.com.umc.cyclecare.controller.records.calendario.DadosCicloRecord;
 import br.com.umc.cyclecare.model.CalendarioCiclo;
 import br.com.umc.cyclecare.model.Ciclo;
 import br.com.umc.cyclecare.repository.CalendarioRepository;
-import br.com.umc.cyclecare.repository.UsuariaRepository;
+import br.com.umc.cyclecare.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,16 +16,16 @@ import java.util.List;
 public class CalendarioService {
 
     private final CalendarioRepository calendarioRepository;
-    private final UsuariaRepository usuariaRepository;
+    private final UserRepository userRepository;
 
     public CalendarioCiclo cadastrarCalendarioCiclo(DadosCalendarioRecord record) {
 
-        var usuaria = usuariaRepository.getReferenceById(record.usuariaId());
+        var user = userRepository.getReferenceById(record.usuariaId());
 
         var calendario = CalendarioCiclo.builder()
                 .dataInicio(record.dataInicio())
                 .dataFim(record.dataFim())
-                .usuaria(usuaria)
+                .user(user)
                 .build();
 
         List<Ciclo> ciclos = montaCiclos(record.diasDoCiclo());

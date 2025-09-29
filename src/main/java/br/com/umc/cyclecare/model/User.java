@@ -11,8 +11,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "usuarias")
-public class Usuaria {
+@Table(name = "users")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,8 +20,8 @@ public class Usuaria {
     private String nome;
     private String email;
     private String telefone;
-    private String dataNascimento;
+    private String senha;
 
-    @OneToMany(mappedBy = "usuaria", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CalendarioCiclo> calendarios;
 }
