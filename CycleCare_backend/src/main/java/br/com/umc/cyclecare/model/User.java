@@ -23,5 +23,5 @@ public class User {
     private String senha;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<CalendarioCiclo> calendarios;
+    private List<Ciclo> calendarios;
 }

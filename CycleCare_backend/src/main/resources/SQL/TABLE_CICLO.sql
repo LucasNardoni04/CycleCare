@@ -3,6 +3,8 @@ CREATE TABLE ciclo (
     sintoma VARCHAR(255),
     fluxo VARCHAR(50) NOT NULL,
     observacao TEXT,
-    calendario_ciclo_id BIGINT NOT NULL,
-    FOREIGN KEY (calendario_ciclo_id) REFERENCES calendarios_ciclo(id) ON DELETE CASCADE
+    data_inicio DATE NOT NULL,
+    data_fim DATE NOT NULL,
+    user_id BIGINT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
